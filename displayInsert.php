@@ -46,16 +46,18 @@ tr:nth-child(even){
     </style>
 </head>
 <body>
-<div class="section_container">
-
-    <?php
+    
+    <div class="section_container">
+        
+        <?php
+        try{
     include("front.php");
- ?>
+    ?>
 
 <section>
 
     <div class="section_two">
-
+        
         
         <?php
 $server="localhost";
@@ -94,6 +96,7 @@ if ($result->num_rows > 0) {
     <th>Price</th>
     <th>Quantity</th>
     <th>Remarks</th>
+    <th>photo</th>
     <th colspan=2>Action</th>
     </tr>";
     
@@ -105,6 +108,7 @@ if ($result->num_rows > 0) {
         <td>{$row['Price']}</td>
         <td>{$row['Quantity']}</td>
         <td>{$row['Remarks']}</td>
+        <td>{$row['photo']}</td>
         <td>
         <a class='anchor' href='javascript:void(0);' onClick='return deleteFromAjax({$row['Id']})'>Delete</a>
         </td>
@@ -113,6 +117,7 @@ if ($result->num_rows > 0) {
         </td>
         </tr>";
     }
+    // print_r($result);
     echo "</table>";
 } else {
     echo "There is no data to display.";
@@ -120,11 +125,15 @@ if ($result->num_rows > 0) {
 
 
 mysqli_close($conn);
-?>
+}
+catch(Exception $e){
+    echo "error:".$e->getMessage();
+}
+    ?>
 
 
-</section>
 </div>
+</section>
 </div>
 
 

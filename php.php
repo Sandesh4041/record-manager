@@ -1,21 +1,33 @@
-
 <?php
-
-// Simple PHP script to handle login
-
-// Define your username and password
-$correct_username = "admin";
-$correct_password = "password";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    if ($username == $correct_username && $password == $correct_password) {
-        include "front.php";
-        echo "Login successful! Welcome, " . htmlspecialchars($username) . ".";
-    } else {
-        echo "Invalid username or password.";
-    }
-}
+session_start();
+include "databaseCon.php";
+ $username=$_POST['username'];
+ $password=$_POST['password'];
+ 
+ $q="select * from insert_tbl where username='$username' and password='$password' and status='active'";
+ $result=mysqli_query($conn,$q);
+ if($row=mysqli_fetch_array($result)){
+   if(isset($_POST['remember'])){
+      setcookie("username",$username,time()+60);
+      setcookie("password",$password,time()+60);
+     
+   }
+  
+ 
+   $_SESSION['username']=$username;
+    header("location:front.php");
+ }
+ else{
+    echo "login fail";
+ }
+ 
 ?>
+  <!-- if(isset($_COOKIE['username'])){
+       echo $_COOKIE['username'];
+   }
+   else{
+       echo " there is no cookie";
+   } -->
+
+   <!-- $_COOKIE['username']=$username; -->
+   <!-- $_COOKIE['password']=$password; -->

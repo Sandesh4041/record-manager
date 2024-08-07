@@ -1,5 +1,8 @@
 <?php
-
+session_start();
+if(!isset($_SESSION['username'])){
+    header("location:login.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +22,7 @@
             <ul class="menu">
                 <li><a href="front.php">Inventory system</a></li>
                 <li class="icon" onclick="changeBackgroundColor()">🌙</li>
-                <li><a href="login.php">welcome:admin ||logout</a></li>
+                <li><a href="logoutForm.php">welcome:<?php echo $_SESSION['username']?> ||logout</a></li>
             </ul>
         </div>
         <!-- style="visibility:visibile"; -->

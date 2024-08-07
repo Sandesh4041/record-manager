@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +71,9 @@
             <form action="php.php" method="post">
                 <input type="text" name="username" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
+                <div class="remember">
+                    <input type="checkbox" name="remember">Remember me?
+                </div>
                 <input type="submit" name="submit" value="login" >
                 
                 <!-- <a href="front.php" class="anchor">login</a> -->

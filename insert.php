@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="index.css" rel="stylesheet">
+    <style>
+        button{
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,8 +21,8 @@
         <div class="section_two">
 
             
-            <div class="form-container">
-                <form action="insertProcess.php" method="post">
+            <div class="form-container" >
+                <form action="insertProcess.php" method="post" enctype="multipart/form-data" style='border-collapse:collapse; width:100%;'> 
             <h2>Nepali product</h2>
             <label for="productName">Product Name</label>
             <input type="text" id="productName" name="productName" required>
@@ -30,6 +35,9 @@
             
             <label for="productRemarks">Product Remarks</label>
             <textarea id="productRemarks" name="productRemarks"></textarea>
+
+            <label for="photo">photo</label>
+            <input type="file" name="photo">
             
             <div class="btn-container">
                 <button type="submit">Submit</button>

@@ -10,14 +10,14 @@
     include "front.php";
     ?>
 
-    <section>
+ 
         <div class="section_two">
 
             <div class="form-container">
                 <form action="signProcess.php" method="post">
                     <h2>Contact Us</h2>
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="username" required>
 
                     <label for="name">Password</label>
                     <input type="text" id="password" name="password" required>
@@ -36,6 +36,6 @@
             </div>
             <!-- </div> -->
         </div>
-    </section>
+    
 </div>
 </body>

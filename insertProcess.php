@@ -19,6 +19,8 @@ try{
    $productPrice = $_POST['productPrice'];
    $productQuantity = $_POST['productQuantity'];
 $productRemarks = $_POST['productRemarks'];
+$photo=$_FILES['photo']['name'];
+
 
 
 // $productName = isset($_POST['productName']) ? $_POST['productName'] : null;
@@ -36,6 +38,7 @@ $server="localhost";
 $username="root";
 $password="";
 $database="projectdb";
+// $photo=$_FILES['photo']['name'];
 
 $conn=mysqli_connect($server,$username,$password,$database);
 if(!$conn){
@@ -44,8 +47,10 @@ if(!$conn){
 else{
     echo "connection sucessfull!!"."<br>";
 }
-$sql="INSERT INTO `project_tbl` ( `Name`, `Price`, `Quantity`, `Remarks`)
- VALUES ('$productName', '$productPrice', '$productQuantity','$productRemarks')";
+$sql="INSERT INTO `project_tbl` ( `Name`, `Price`, `Quantity`, `Remarks`,`photo`)
+ VALUES ('$productName', '$productPrice', '$productQuantity','$productRemarks','$photo')";
+//   move file to httdocs folder
+move_uploaded_file($_FILES['photo']['tmp_name'],"images/".$photo);
 $result=mysqli_query($conn,$sql);
 if($result){
     echo "<div class='message' style='visibility:visibile';>Data inserted sucessfully</div>";

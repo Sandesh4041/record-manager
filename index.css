@@ -59,7 +59,7 @@ body {
 
 .section_two {
   /* display: block; */
-  width: 60%;
+  width: 70%;
   height: 90vh;
   margin-top: 30px;
   margin-left: 20px;
@@ -155,8 +155,6 @@ button:hover {
   display: flex;
   flex: 100%;
   justify-content: center;
-  margin-top: 0.5rem;
-  margin-bottom: -1.2rem;
   visibility: visibile;
 
 }
@@ -191,9 +189,4 @@ tr:nth-child(odd){
 tr:nth-child(even){
   background-color:rgb(201, 227, 241);
   color: black;
-}
-.circle{
-  width: 20rem;
-  height: 20rem;
-  border-radius: 50%;
 }
