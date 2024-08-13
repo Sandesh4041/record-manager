@@ -76,6 +76,7 @@ body {
   width: 90%;
 }
 
+
 .insert-container {
   background: #fff;
   padding: 20px;
@@ -144,6 +145,7 @@ button {
   font-size: 16px;
   cursor: pointer;
 }
+
 
 button:hover {
   background-color: #1f03c0;
