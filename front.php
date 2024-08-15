@@ -26,7 +26,7 @@ if(!isset($_SESSION['username'])){
             </ul>
         </div>
         <!-- style="visibility:visibile"; -->
-            <div class="message"></div>
+            <!-- <div class="message"></div> -->
        
         <div class="section_container">
 

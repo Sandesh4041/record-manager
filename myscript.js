@@ -41,3 +41,41 @@ function deleteDataFromTable(i){
     myCart.splice(i,1);
     displayInTable()
 }
+
+function saveTableData(){
+    var vendorName=$("input[name='vendor']").val();
+    var data={"vendor":vendorName};
+    // console.log(vendorName);
+    jQuery.ajax({
+        url:'purchaseItem.php',
+        method:"post",
+        data:data,
+        before:function(){},
+        success:function(response){
+            // $(".msg").html("<div class='message'>"+response+"</div>");
+            saveBill(response);
+        },
+        error:function(){}
+
+    });
+}
+
+function saveBill(id){
+    console.clear()
+    console.log(id)
+    for(var i=0; i<myCart.length; i++){
+        obj=myCart[i];
+        obj.vendor_id=id;
+        console.log(obj);
+        $.ajax({
+            url:"saveBill.php",
+            method:"post",
+            data:obj,
+            beforeSend:function(){},
+            success:function(response){
+                $(".msg").html("<div class='message'>"+response+"</div>");
+            },
+            error:function(){}
+        });
+    }
+}

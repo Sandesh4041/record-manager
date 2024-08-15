@@ -53,7 +53,7 @@ $sql="INSERT INTO `project_tbl` ( `Name`, `Price`, `Quantity`, `Remarks`,`photo`
 move_uploaded_file($_FILES['photo']['tmp_name'],"images/".$photo);
 $result=mysqli_query($conn,$sql);
 if($result){
-    echo "<div class='message' style='visibility:visibile';>Data inserted sucessfully</div>";
+    echo "<div class='message'>Data inserted sucessfully</div>";
 }    
 } catch (Exception $e) {
 echo "Error: " . $e->getMessage();

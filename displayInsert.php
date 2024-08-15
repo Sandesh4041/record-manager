@@ -46,15 +46,15 @@ tr:nth-child(even){
     </style>
 </head>
 <body>
-    
     <div class="section_container">
         
         <?php
         try{
-    include("front.php");
-    ?>
+            include("front.php");
+            ?>
+       
 
-<section>
+
 
     <div class="section_two">
         
@@ -133,7 +133,7 @@ catch(Exception $e){
 
 
 </div>
-</section>
+
 </div>
 
 
