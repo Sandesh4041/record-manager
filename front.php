@@ -39,7 +39,7 @@ if(!isset($_SESSION['username'])){
                         <li><a href="displayUser.php">Display User</a></li>
                         <li><a href="purchaseForm.php">Purchase</a></li>
                         <li><a href="#">Sales</a></li>
-                        <li><a href="#">Display purchase data</a></li>
+                        <li><a href="diplayPurchase.php">Display purchase data</a></li>
                         <li><a href="#">Stock</a></li>
                     </ul>
                 </div>
