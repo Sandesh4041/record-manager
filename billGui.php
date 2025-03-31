@@ -40,7 +40,7 @@ include "front.php";
         <div id="bill" class="bill-container-heading">
             <section class="one-section">
                 <h1>ABC Company</h1>
-                <P class="invoice">Invoice To:</P>
+                <P class="invoice">Invoice To:<?php echo $id ?></P>
                 <p>newroad elec shop</p>
             </section>
 

@@ -10,6 +10,7 @@ $id=$_GET['id'];
 $q="select * from project_tbl where id=$id";
 $result=mysqli_query($conn,$q);
 $row=mysqli_fetch_array($result,MYSQLI_NUM);
+// print_r($row);
 ?>
     <div class="form-container">
     <h1>Edit detail</h1>
